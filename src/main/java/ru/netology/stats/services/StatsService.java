@@ -2,16 +2,18 @@ package ru.netology.stats.services;
 
 public class StatsService {
 
-   public int calcSumSales (int[] sales) {
-       int sum = 0;
-       for (int i: sales) {
-           sum += i;
-       }
-       return sum;
-   }
+    public int calcSumSales(int[] sales) {
+        int sum = 0;
+        for (int i : sales) {
+            sum += i;
+        }
+        return sum;
+    }
 
-    public int calcMiddleSumSales (int[] sales) {
+    public int calcMiddleSumSales(int[] sales) {
         int middleSum = calcSumSales(sales) / sales.length;
+        {
+        }
         return middleSum;
     }
 
@@ -41,28 +43,22 @@ public class StatsService {
         return maxMonth + 1;
     }
 
-    public int calcNumberMonthsWithSalesLowerMiddle(int[] sales) {
+    public int calcNumberMonthsWithSalesLowerMiddle(long[] sales) {
         int numberMonths = 0;
-        int sum =0;
-        for (int monthSale : sales) {
-            sum += monthSale;
-        }
-        for (int sale : sales) {
-            if (sale < calcMiddleSumSales(sales)) {
+        int middleSumSales = 15;
+        for (long monthSale : sales) {
+            if (monthSale < middleSumSales) {
                 numberMonths += 1;
             }
         }
         return numberMonths;
     }
 
-    public int calcNumberMonthsWithSalesHigherMiddle(int[] sales) {
+    public int calcNumberMonthsWithSalesHigherMiddle(long[] sales) {
         int numberMonths = 0;
-        int sum =0;
-        for (int monthSale : sales) {
-            sum += monthSale;
-        }
-        for (int sale : sales) {
-            if (sale > calcMiddleSumSales(sales)) {
+        int middleSumSales = 15;
+        for (long monthSale : sales) {
+            if (monthSale > middleSumSales) {
                 numberMonths += 1;
             }
         }

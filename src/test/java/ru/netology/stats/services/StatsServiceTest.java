@@ -56,10 +56,10 @@ public class StatsServiceTest {
     public void shouldCalcNumberMonthsWithSalesLowerMiddle() {
         StatsService service = new StatsService();
 
-        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
-        int expectedNumberMonths = 5;
-        int actualNumberMonths = service.calcNumberMonthsWithSalesLowerMiddle(sales);
+        long expectedNumberMonths = 5;
+        long actualNumberMonths = service.calcNumberMonthsWithSalesLowerMiddle(sales);
 
         Assertions.assertEquals(expectedNumberMonths, actualNumberMonths);
     }
@@ -68,10 +68,10 @@ public class StatsServiceTest {
     public void shouldCalcNumberMonthsWithSalesHigherMiddle() {
         StatsService service = new StatsService();
 
-        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
-        int expectedNumberMonths = 5;
-        int actualNumberMonths = service.calcNumberMonthsWithSalesHigherMiddle(sales);
+        long expectedNumberMonths = 5;
+        long actualNumberMonths = service.calcNumberMonthsWithSalesHigherMiddle(sales);
 
         Assertions.assertEquals(expectedNumberMonths, actualNumberMonths);
     }
